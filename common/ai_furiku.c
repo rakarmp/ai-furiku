@@ -279,6 +279,7 @@ void write_log(const char *message) {
     time_t now;
     struct tm *timeinfo;
     char timestamp[64];
+    char format[MAX_PATH_LENGTH];
     char log_file[MAX_PATH_LENGTH];
     FILE *fp;
     
@@ -288,8 +289,8 @@ void write_log(const char *message) {
     strftime(timestamp, sizeof(timestamp), "%Y-%m-%d %H:%M:%S", timeinfo);
     
     // Format log file name with current date
-    strftime(log_file, sizeof(log_file), 
-             "%s/ai_furiku_%Y%m%d.log", LOG_DIR, timeinfo);
+    snprintf(format, sizeof(format), "%s/ai_furiku_%%Y%%m%%d.log", LOG_DIR);
+    strftime(log_file, sizeof(log_file), format, timeinfo);
     
     // Open log file in append mode
     fp = fopen(log_file, "a");
