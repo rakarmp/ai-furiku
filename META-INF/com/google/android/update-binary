@@ -1,0 +1,48 @@
+#!/sbin/sh
+TMPDIR=/dev/tmp
+MOUNTPATH=/dev/magisk_img
+
+# Versi dan variabel
+MODID=ai-furiku
+MODPATH=$MOUNTPATH/$MODID
+
+# Setup lingkungan
+umask 022
+
+# Cetak informasi
+ui_print() {
+  echo "$1"
+}
+
+require_new_magisk() {
+  ui_print "! Magisk versi $MAGISK_VER_CODE terdeteksi"
+  ui_print "! Membutuhkan Magisk versi minimal 20.0"
+  exit 1
+}
+
+# Pastikan Magisk versi 20.0 atau lebih tinggi
+imageless_magisk() {
+  [ $MAGISK_VER_CODE -gt 18 ]
+}
+
+# Tampilkan info modul
+ui_print "******************************"
+ui_print "      AI-Furiku Installer     "
+ui_print "******************************"
+ui_print "- Support Snapdragon/MediaTek"
+ui_print "- Version 1.0"
+
+# Persiapan instalasi
+mkdir -p $MODPATH 2>/dev/null
+cd $MODPATH
+unzip -o "$3" 'system/*' 'module/*' 'common/*' 'config/*' 'obj/*' 'scripts/*' 'module.prop' 'service.sh' 'post-fs-data.sh' -d $MODPATH >&2
+
+# Set permissions
+set_perm_recursive $MODPATH 0 0 0755 0644
+set_perm_recursive $MODPATH/system/bin 0 0 0755 0755
+set_perm_recursive $MODPATH/scripts 0 0 0755 0755
+
+# Tampilkan pesan sukses
+ui_print "- Instalasi selesai"
+ui_print "- Restart perangkat untuk mengaktifkan"
+exit 0

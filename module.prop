@@ -1,0 +1,8 @@
+id=ai-furiku
+name=AI-Furiku
+version=v1.0
+versionCode=1
+author=Zyarexx @Telegram
+description=AI optimization module for dynamic kernel adjustments that improve performance and battery efficiency
+support=https://github.com/rakarmp/AI-Furiku
+minMagisk=20000
