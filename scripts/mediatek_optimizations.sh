@@ -1,5 +1,4 @@
 #!/system/bin/sh
-# Optimasi khusus untuk chipset MediaTek
 
 # Optimasi APU (AI Processing Unit)
 optimize_apu() {

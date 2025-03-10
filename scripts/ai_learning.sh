@@ -1,5 +1,4 @@
 #!/system/bin/sh
-# Script untuk analisis pola penggunaan dan pembelajaran
 
 MODDIR=/data/adb/modules/ai-furiku
 CONFIG_DIR=$MODDIR/config

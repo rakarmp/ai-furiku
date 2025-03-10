@@ -1,5 +1,4 @@
 #!/system/bin/sh
-# Optimasi khusus untuk chipset Snapdragon
 
 # Optimasi Adreno GPU
 optimize_adreno() {

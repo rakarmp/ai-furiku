@@ -1,5 +1,4 @@
 #!/system/bin/sh
-# Script utama untuk menjalankan layanan AI-Furiku
 
 MODDIR=/data/adb/modules/ai-furiku
 CONFIG_DIR=$MODDIR/config
