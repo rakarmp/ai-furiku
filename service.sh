@@ -1,6 +1,4 @@
 #!/system/bin/sh
-# Mulai layanan AI-Furiku setelah boot selesai
-
 MODDIR=${0%/*}
 
 # Tunggu hingga sistem benar-benar dimulai
