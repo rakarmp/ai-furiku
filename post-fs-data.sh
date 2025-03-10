@@ -1,5 +1,4 @@
 #!/system/bin/sh
-# Jalankan saat post-fs-data
 
 MODDIR=${0%/*}
 
